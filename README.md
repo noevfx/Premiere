@@ -1,45 +1,53 @@
-# Premiere
+# Premiere — ferramentas da Noé VFX
 
-Repositorio de scripts, painéis e ferramentas de automação para Adobe Premiere Pro.
+Duas ferramentas para o **Adobe Premiere Pro**, para Windows e macOS.
 
-## Projetos atuais
+## O que tem aqui
 
-- **Premiere Toolkit (v1.0.0)**: Painel UXP oficial para Adobe Premiere Pro. Limpeza e organização de projeto, consolidação de duplicados e remoção de tracks vazias na timeline.
-- **Premiere MCP Bridge (v1.0.0)**: Servidor Model Context Protocol (MCP) e extensão CEP para controle e automação remota da timeline e projeto do Premiere Pro via agentes de IA.
+| Ferramenta | Para que serve | Versão | Baixar |
+| :--- | :--- | :--- | :--- |
+| **Premiere Toolkit** | Painel que limpa e organiza o projeto: consolida duplicados e remove tracks vazias da timeline | 1.0.0 | [Windows](release/Premiere%20Toolkit/v1.0.0/Premiere%20Toolkit%201.0.0%20%28Windows%29.zip) · [Mac](release/Premiere%20Toolkit/v1.0.0/Premiere%20Toolkit%201.0.0%20%28Mac%29.zip) |
+| **Premiere MCP Bridge** | Deixa assistentes de IA (Claude, Codex) controlarem a timeline e o projeto do Premiere | 1.0.0 | [zip](release/Premiere%20MCP/v1.0.0/Premiere_MCP_1.0.0.zip) |
 
-## Estrutura do Repositório
+## Como instalar o Premiere Toolkit
+
+1. Baixe o zip do seu sistema e extraia.
+2. Rode o instalador da pasta `Premiere Toolkit` (Windows: `Install_Premiere_Toolkit.bat`). Para remover: `Uninstall_Premiere_Toolkit.bat`.
+3. Reinicie o Premiere Pro e abra o painel em **Janela → Extensões**.
+
+O `LEIA-ME.txt` dentro do zip traz o passo a passo completo.
+
+## Como instalar o Premiere MCP Bridge
+
+1. Baixe o zip, extraia e leia o `LEIA-ME.txt`.
+2. Rode o instalador do seu sistema (pastas `PC` e `MAC`).
+3. Abra o painel da ponte dentro do Premiere. **Ele precisa ficar aberto** para a IA conseguir agir.
+
+Requer o [Node.js](https://nodejs.org) instalado.
+
+### Como funciona
+
+```
+Assistente de IA ─▶ servidor MCP (Node.js) ─▶ painel CEP dentro do Premiere ─▶ ExtendScript
+```
+
+## Estrutura do repositório
 
 ```text
 Premiere/
-  ├── Premiere Toolkit/        # Painel UXP oficial
-  │     ├── plugin/
-  │     ├── install/
-  │     ├── test/
-  │     ├── tools/
-  │     └── tools/pack.mjs     # gera os zips em release/Premiere Toolkit/vX.Y.Z/
-  ├── mcp/                     # Ponte MCP & Automação da Timeline
-  │     ├── server/            # Servidor Node.js do premiere-bridge
-  │     ├── cep-panel/         # Painel CEP de ponte com o Premiere
-  │     ├── skill/             # Skill premiere-bridge para agentes de IA
-  │     ├── PC/ & MAC/         # Scripts de instalação
-  │     └── build_zip.py       # gera o zip em release/Premiere MCP/vX.Y.Z/
-  ├── release/                 # pacotes de cada versão, em ordem crescente
-  │     ├── Premiere Toolkit/v1.0.0/
-  │     └── Premiere MCP/v1.0.0/
-  ├── CHANGELOG.md  HANDOFF.md
-  └── README.md
+├─ Premiere Toolkit/            painel UXP (código, instaladores, testes e empacotamento)
+├─ mcp/                         ponte de IA: servidor Node.js, painel CEP e scripts de instalação
+├─ release/<Ferramenta>/vX.Y.Z/ pacote de cada versão (ordem crescente, nada é sobrescrito)
+├─ CHANGELOG.md                 histórico de versões
+└─ HANDOFF.md  VERSIONING.md    como continuar o projeto e regra de versões
 ```
 
-## Releases
+## Versões
 
-Cada produto tem a sua pasta de versões em `release/<Produto>/vX.Y.Z/` (ordem crescente, nada é sobrescrito); histórico em [`CHANGELOG.md`](CHANGELOG.md). Os instaladores para Windows e macOS também estão na aba [Releases](https://github.com/noevfx/Premiere/releases).
+Versionamento `MAJOR.MINOR.PATCH`. Histórico no [CHANGELOG](CHANGELOG.md); regra em [VERSIONING.md](VERSIONING.md).
 
-## Diretrizes de Desenvolvimento
+## Contato
 
-Antes de alterar qualquer script, painel ou arquivo de empacotamento, consulte:
+Noé VFX — [noevfx.com](https://noevfx.com) · [labs@noevfx.com](mailto:labs@noevfx.com)
 
-1. `VERSIONING.md`
-2. `AGENTS.md`
-3. `CLAUDE.md`
-
-Sempre siga o versionamento SemVer (`MAJOR.MINOR.PATCH`) e faça commits em português com prefixos semânticos padronizados.
+Adobe e Premiere Pro são marcas da Adobe. Estas ferramentas são independentes e não são afiliadas nem endossadas pela Adobe.
