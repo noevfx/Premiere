@@ -15,7 +15,7 @@
  * Sem compressao (metodo "store"): o conteudo e pequeno e assim o gerador
  * cabe num arquivo, sem dependencia externa.
  */
-import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, statSync, mkdirSync } from "node:fs";
 import { join, dirname, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -156,7 +156,9 @@ function build({ label, files, pluginFiles, dirs, readme, out }) {
     mode: MODE_FILE, dir: false, mtime: new Date(),
   });
 
-  const outPath = join(ROOT, out);
+  const outDir = join(ROOT, "..", "release", "Premiere Toolkit", `v${version}`);
+  mkdirSync(outDir, { recursive: true });
+  const outPath = join(outDir, out);
   writeZip(outPath, entries);
 
   const bytes = statSync(outPath).size;

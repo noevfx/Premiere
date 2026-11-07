@@ -21,7 +21,7 @@ Passo 1 instala o painel CEP e liga o PlayerDebugMode. Passo 2 copia o servidor 
 registra `premiere-bridge` no Claude Code (escopo user) e no Codex (`~/.codex/config.toml`)
 e instala a skill em `~/.claude/skills` e `~/.codex/skills`. Reinstalar e seguro.
 
-`Premiere_MCP_1.0.0.zip` e o pacote pronto para distribuir (regerar a cada versao, ver `VERSIONING.md`).
+`release/Premiere MCP/v1.0.0/Premiere_MCP_1.0.0.zip` (na raiz do repositorio) e o pacote pronto para distribuir (regerar a cada versao, ver `VERSIONING.md`).
 
 ## Changelog
 

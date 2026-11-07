@@ -16,20 +16,23 @@ Premiere/
   │     ├── install/
   │     ├── test/
   │     ├── tools/
-  │     ├── Premiere Toolkit 1.0.0 (Windows).zip
-  │     └── Premiere Toolkit 1.0.0 (Mac).zip
+  │     └── tools/pack.mjs     # gera os zips em release/Premiere Toolkit/vX.Y.Z/
   ├── mcp/                     # Ponte MCP & Automação da Timeline
   │     ├── server/            # Servidor Node.js do premiere-bridge
   │     ├── cep-panel/         # Painel CEP de ponte com o Premiere
   │     ├── skill/             # Skill premiere-bridge para agentes de IA
   │     ├── PC/ & MAC/         # Scripts de instalação
-  │     └── Premiere_MCP_1.0.0.zip
+  │     └── build_zip.py       # gera o zip em release/Premiere MCP/vX.Y.Z/
+  ├── release/                 # pacotes de cada versão, em ordem crescente
+  │     ├── Premiere Toolkit/v1.0.0/
+  │     └── Premiere MCP/v1.0.0/
+  ├── CHANGELOG.md  HANDOFF.md
   └── README.md
 ```
 
 ## Releases
 
-As versões estáveis e instaladores prontos para uso em Windows e macOS estão disponíveis na aba [Releases](https://github.com/eduardonoe/Premiere/releases).
+Cada produto tem a sua pasta de versões em `release/<Produto>/vX.Y.Z/` (ordem crescente, nada é sobrescrito); histórico em [`CHANGELOG.md`](CHANGELOG.md). Os instaladores para Windows e macOS também estão na aba [Releases](https://github.com/noevfx/Premiere/releases).
 
 ## Diretrizes de Desenvolvimento
 

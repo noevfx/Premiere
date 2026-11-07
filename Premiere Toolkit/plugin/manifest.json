@@ -1,6 +1,6 @@
 {
   "manifestVersion": 5,
-  "id": "com.eduardonoe.premieretoolkit",
+  "id": "com.noevfx.premieretoolkit",
   "name": "Premiere Toolkit",
   "version": "1.0.0",
   "main": "index.html",
