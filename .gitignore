@@ -3,3 +3,9 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# Instruções de agentes ficam só no computador
+AGENTS.md
+CLAUDE.md
+.clinerules
+.agents/
